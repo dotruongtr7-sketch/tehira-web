@@ -55,8 +55,6 @@ linear-gradient(130deg,#fffaf6 0%,#fff6ef 48%,#efd2bf 100%)}
 /* ===== WOW LAYER: chuyển động toàn trang · reveal khi cuộn · ánh sáng theo con trỏ ===== */
 html{scroll-behavior:smooth}
 .scroll-prog{position:fixed;top:0;left:0;height:3px;width:0;z-index:200;background:linear-gradient(90deg,#e9c58f,#bc713b);box-shadow:0 0 14px rgba(191,119,66,.65);transition:width .12s linear}
-.cursor-glow{position:fixed;top:0;left:0;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:2;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(224,167,96,.20),rgba(224,167,96,.07) 42%,transparent 70%);mix-blend-mode:multiply;opacity:0;transition:opacity .6s ease;will-change:transform}
-body:hover .cursor-glow{opacity:1}
 .blob.a{animation:floatA 15s ease-in-out infinite}
 .blob.b{animation:floatB 19s ease-in-out infinite}
 @keyframes floatA{50%{transform:translate(-26px,34px) scale(1.08)}}
@@ -84,7 +82,7 @@ body:hover .cursor-glow{opacity:1}
 .js .hero .stage{opacity:0;animation:heroFade 1.3s ease .25s forwards}
 @keyframes heroUp{to{opacity:1;transform:none}}
 @keyframes heroFade{to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.cursor-glow,.blob.a,.blob.b{animation:none!important}.js [data-reveal]{opacity:1!important;transform:none!important}.js .hero .copy>*,.js .hero .stage{opacity:1!important;animation:none!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){.blob.a,.blob.b{animation:none!important}.js [data-reveal]{opacity:1!important;transform:none!important}.js .hero .copy>*,.js .hero .stage{opacity:1!important;animation:none!important;transform:none!important}}
 /* ===== WOW LAYER 2: đếm số · con trỏ tuỳ biến · nút nam châm · tiêu đề theo chữ · marquee ===== */
 .stats-band{background:linear-gradient(180deg,#fff,#fff8f2);padding:62px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:1}
 .stats-band .container{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -211,7 +209,7 @@ body:hover .cursor-glow{opacity:1}
   else run();
 })();
 </script>
-<div class="scroll-prog"></div><div class="cursor-glow"></div><canvas class="stardust" aria-hidden="true"></canvas>
+<div class="scroll-prog"></div><canvas class="stardust" aria-hidden="true"></canvas>
 <header class="header"><div class="container nav"><a class="brand" href="#"><img src="assets/tehira-mark.png" alt="TEHIRA"><div><b>TEHIRA</b><small>Healthcare & Beauty</small></div></a><nav class="links"><a href="index.html">Trang chủ</a><a href="dich-vu.html">Dịch vụ</a><a href="van-de-cua-ban.html">Vấn đề của bạn</a><a href="cong-nghe.html">Công nghệ</a><a href="#doi-ngu">Chuyên gia</a><a href="ket-qua.html">Kết quả</a><a href="kien-thuc.html">Kiến thức</a></nav><a class="book" href="dat-lich.html">Đặt lịch ngay</a></div></header>
 <section class="hero">
 <div class="blob a"></div><div class="blob b"></div>

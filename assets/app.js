@@ -39,13 +39,6 @@ $('#newsletterForm')?.addEventListener('submit',e=>{e.preventDefault();alert('Đ
   // Scroll progress
   const prog=$('.scroll-prog');
   if(prog){ const upd=()=>{const h=document.documentElement,max=h.scrollHeight-h.clientHeight;prog.style.width=(max>0?h.scrollTop/max*100:0)+'%';}; addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd(); }
-  // Cursor-follow glow (chỉ chuột thật)
-  const glow=$('.cursor-glow');
-  if(glow && matchMedia('(pointer:fine)').matches){
-    let gx=innerWidth/2,gy=innerHeight/2,cx=gx,cy=gy;
-    addEventListener('pointermove',e=>{gx=e.clientX;gy=e.clientY;},{passive:true});
-    (function loop(){cx+=(gx-cx)*.16;cy+=(gy-cy)*.16;glow.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(loop);})();
-  }
   // Thẻ dịch vụ: nghiêng 3D + sheen theo con trỏ
   if(matchMedia('(pointer:fine)').matches){
     $$('.service').forEach(card=>{
