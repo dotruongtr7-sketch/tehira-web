@@ -78,14 +78,6 @@ $('#newsletterForm')?.addEventListener('submit',e=>{e.preventDefault();alert('Đ
     else nums.forEach(run);
   }
 
-  // 2) Con trỏ ring bám theo + phình khi rê vào phần tử tương tác
-  const ring=$('.cursor-ring');
-  if(ring && fine && !RM){
-    let rx=innerWidth/2,ry=innerHeight/2,tx=rx,ty=ry;
-    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;ring.classList.toggle('hot',!!(e.target.closest&&e.target.closest('a,button,.btn,.service,.book,video,.faq-q')));},{passive:true});
-    (function l(){rx+=(tx-rx)*.22;ry+=(ty-ry)*.22;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(l);})();
-  }
-
   // 3) Nút CTA nam châm
   if(fine && !RM){
     $$('.btn').forEach(b=>{

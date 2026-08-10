@@ -99,13 +99,10 @@ body:hover .cursor-glow{opacity:1}
 .marquee-track .dot{color:#e6bd8c}
 .marquee:hover .marquee-track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
-.cursor-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1.5px solid rgba(191,119,66,.6);border-radius:50%;pointer-events:none;z-index:201;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease,border-color .25s ease;opacity:0;will-change:transform}
-body:hover .cursor-ring{opacity:1}
-.cursor-ring.hot{width:62px;height:62px;background:rgba(224,167,96,.14);border-color:rgba(191,119,66,.9)}
 .btn{transition:transform .18s ease-out,box-shadow .3s ease}
 .js .hero h1 .w{display:inline-block;opacity:0;transform:translateY(48px) rotate(3deg);animation:wordUp .95s cubic-bezier(.2,.75,.2,1) forwards}
 @keyframes wordUp{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}.cursor-ring{display:none}.js .hero h1 .w{opacity:1!important;transform:none!important;animation:none!important}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}.js .hero h1 .w{opacity:1!important;transform:none!important;animation:none!important}}
 /* ===== WOW LAYER 3: Tầm nhìn – Sứ mệnh · bụi vàng · vòng xoay ===== */
 .js [data-reveal="right"]{transform:translateX(48px)}
 .stardust{position:fixed;inset:0;pointer-events:none;z-index:1}
@@ -214,7 +211,7 @@ body:hover .cursor-ring{opacity:1}
   else run();
 })();
 </script>
-<div class="scroll-prog"></div><div class="cursor-glow"></div><div class="cursor-ring"></div><canvas class="stardust" aria-hidden="true"></canvas>
+<div class="scroll-prog"></div><div class="cursor-glow"></div><canvas class="stardust" aria-hidden="true"></canvas>
 <header class="header"><div class="container nav"><a class="brand" href="#"><img src="assets/tehira-mark.png" alt="TEHIRA"><div><b>TEHIRA</b><small>Healthcare & Beauty</small></div></a><nav class="links"><a href="index.html">Trang chủ</a><a href="dich-vu.html">Dịch vụ</a><a href="van-de-cua-ban.html">Vấn đề của bạn</a><a href="cong-nghe.html">Công nghệ</a><a href="#doi-ngu">Chuyên gia</a><a href="ket-qua.html">Kết quả</a><a href="kien-thuc.html">Kiến thức</a></nav><a class="book" href="dat-lich.html">Đặt lịch ngay</a></div></header>
 <section class="hero">
 <div class="blob a"></div><div class="blob b"></div>
