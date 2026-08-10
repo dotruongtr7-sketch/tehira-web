@@ -94,7 +94,7 @@ html{scroll-behavior:smooth}
 .marquee{overflow:hidden;padding:20px 0;background:linear-gradient(90deg,#fbeadd,#fff6ee,#fbeadd);border-top:1px solid var(--line);border-bottom:1px solid var(--line);--mq:40s}
 .marquee-track{display:inline-flex;gap:34px;white-space:nowrap;will-change:transform;animation:mq var(--mq) linear infinite}
 .marquee-track span{font-family:'Be Vietnam Pro',sans-serif;font-weight:700;font-size:clamp(15px,2.1vw,25px);color:#c98a54;letter-spacing:.14em}
-.marquee-track .dot{color:#e6bd8c}
+.marquee-track .dot{color:#e6bd8c;letter-spacing:0;line-height:1;font-size:15px;text-indent:0}
 .marquee:hover .marquee-track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 .btn{transition:transform .18s ease-out,box-shadow .3s ease}
