@@ -177,6 +177,16 @@ footer .brand small{color:#c99a6e}
  body{padding-bottom:74px}
 }
 .hot{background:#fff3e8;border:1px solid #f0c893;color:#a3541f;font-size:13px;font-weight:600;text-align:center;padding:10px 12px;border-radius:10px;margin-bottom:14px;letter-spacing:.01em}
+.cd{background:#fff8ef;border:1px solid #f0c893;border-radius:14px;padding:11px 10px;margin-bottom:14px;text-align:center;box-shadow:0 8px 22px rgba(171,94,42,.14)}
+.cd-label{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:#a3541f;margin-bottom:8px}
+.cd-time{display:flex;justify-content:center;align-items:flex-start;gap:6px}
+.cd-box{background:linear-gradient(135deg,#bc713b,#8a4f24);border-radius:10px;padding:7px 4px;min-width:54px}
+.cd-box b{display:block;font-size:25px;font-weight:800;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.cd-box span{font-size:9.5px;font-weight:600;letter-spacing:.05em;color:#ffe0b8}
+.cd-sep{font-size:22px;font-weight:800;color:#bc713b;line-height:1.5}
+footer a,footer p{overflow-wrap:anywhere;word-break:break-word}
+.mbar .btn{padding:14px 8px;font-size:14px}
+@media(max-width:410px){footer .wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -212,7 +222,7 @@ footer .brand small{color:#c99a6e}
     <!-- FORM (khối chuyển đổi chính) -->
     <div class="form-card" id="dangky" data-rev>
       <h3>Đăng ký <span style="color:var(--gold2)">Soi Da + Tư Vấn 1:1</span> MIỄN PHÍ</h3>
-      <p class="cap">Để lại thông tin — chuyên viên TEHIRA sẽ gọi tư vấn &amp; đặt lịch cho bạn trong 24h.</p><div class="hot">🔥 Chỉ <b>100 khách nhanh nhất</b> — CÒN LẠI <b>3 SUẤT MIỄN PHÍ</b></div>
+      <p class="cap">Để lại thông tin — chuyên viên TEHIRA sẽ gọi tư vấn &amp; đặt lịch cho bạn trong 24h.</p><div class="cd" data-countdown><div class="cd-label">⏰ ƯU ĐÃI KẾT THÚC SAU</div><div class="cd-time"><div class="cd-box"><b data-h>00</b><span>GIỜ</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-m>00</b><span>PHÚT</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-s>00</b><span>GIÂY</span></div></div></div><div class="hot">🔥 Chỉ <b>100 khách nhanh nhất</b> — CÒN LẠI <b>3 SUẤT MIỄN PHÍ</b></div>
       <form id="leadForm" novalidate>
         <div class="field">
           <label>Họ và tên *</label>
@@ -355,7 +365,7 @@ footer .brand small{color:#c99a6e}
       <span class="tag">ƯU ĐÃI ĐĂNG KÝ HÔM NAY</span>
       <h3>Soi da chuyên sâu + Tư vấn phác đồ 1:1<br><span class="free">MIỄN PHÍ 100%</span></h3>
       <p>Hiểu đúng làn da &amp; nhận lộ trình trị mụn phù hợp trước khi quyết định — hoàn toàn miễn phí, không ép mua liệu trình.</p>
-      <a class="btn big" href="#dangky">ĐĂNG KÝ NHẬN SUẤT SOI DA MIỄN PHÍ</a>
+      <div style="max-width:360px;margin:0 auto 18px"><div class="cd" data-countdown><div class="cd-label">⏰ ƯU ĐÃI KẾT THÚC SAU</div><div class="cd-time"><div class="cd-box"><b data-h>00</b><span>GIỜ</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-m>00</b><span>PHÚT</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-s>00</b><span>GIÂY</span></div></div></div></div><a class="btn big" href="#dangky">ĐĂNG KÝ NHẬN SUẤT SOI DA MIỄN PHÍ</a>
       <div class="scar">⏳ Chỉ <b>100 khách hàng nhanh nhất</b> — <b style="color:#ffcf8f">CÒN LẠI 3 SUẤT MIỄN PHÍ</b></div>
     </div>
   </div>
@@ -437,6 +447,20 @@ footer .brand small{color:#c99a6e}
 
 <script>
 document.documentElement.classList.add('js');
+// Đồng hồ đếm ngược evergreen 24h (mỗi khách 1 mốc riêng, hết giờ tự làm mới)
+(function(){
+  const boxes=[...document.querySelectorAll('[data-countdown]')]; if(!boxes.length) return;
+  const KEY='tehira_cd_end', DUR=24*3600*1000; let end=+localStorage.getItem(KEY)||0;
+  if(!end||end<Date.now()){end=Date.now()+DUR;try{localStorage.setItem(KEY,end)}catch(e){}}
+  const p=n=>String(n).padStart(2,'0');
+  function tick(){
+    let d=end-Date.now();
+    if(d<=0){end=Date.now()+DUR;try{localStorage.setItem(KEY,end)}catch(e){}d=DUR;}
+    const h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
+    boxes.forEach(b=>{const H=b.querySelector('[data-h]'),M=b.querySelector('[data-m]'),S=b.querySelector('[data-s]');if(H)H.textContent=p(h);if(M)M.textContent=p(m);if(S)S.textContent=p(s);});
+  }
+  tick(); setInterval(tick,1000);
+})();
 
 /* ==== CẤU HÌNH: dán URL Google Apps Script để lead chạy về Google Sheet ====
    (Xem hướng dẫn 5 phút mà TEHIRA/Claude đã gửi. Để trống thì form vẫn báo
