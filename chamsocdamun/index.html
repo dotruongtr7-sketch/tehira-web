@@ -465,7 +465,7 @@ document.documentElement.classList.add('js');
 /* ==== CẤU HÌNH: dán URL Google Apps Script để lead chạy về Google Sheet ====
    (Xem hướng dẫn 5 phút mà TEHIRA/Claude đã gửi. Để trống thì form vẫn báo
     thành công nhưng CHƯA lưu về Sheet — nhớ điền trước khi chạy quảng cáo.) */
-const LEAD_ENDPOINT = "https://formsubmit.co/ajax/dotruongtr7@gmail.com";
+const LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbzLcQOQO3hjBB-RAYd_mgaqInF0y0r4S_z9dE09PzosTm9betmlM4X6hYcxXtwgj6-rvA/exec";
 
 // Reveal on scroll
 (function(){
@@ -507,7 +507,7 @@ function handleLead(form){
   const name=(data.hoten||'').trim(), phone=(data.sdt||'').trim();
   if(!name||phone.replace(/\D/g,'').length<8){ alert('Vui lòng nhập Họ tên và Số điện thoại hợp lệ.'); return false; }
   if(LEAD_ENDPOINT){
-    fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({},data,{_subject:'🔔 Lead mới - Landing trị mụn TEHIRA',_template:'table',_captcha:'false'}))}).catch(()=>{});
+    fetch(LEAD_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).catch(()=>{});
   }
   form.reset();
   document.getElementById('modal').classList.add('show');
