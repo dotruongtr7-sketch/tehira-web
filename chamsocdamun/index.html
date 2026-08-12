@@ -198,7 +198,13 @@ footer a,footer p{overflow-wrap:anywhere;word-break:break-word}
 .sp .tx b{color:var(--brown)}
 .sp .t{color:var(--muted);font-size:11px;display:flex;align-items:center;gap:5px;margin-top:3px}
 .sp .t::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
-@media(max-width:900px){.sp{bottom:84px;left:10px;right:10px;max-width:none}}
+@media(max-width:900px){
+ .sp{top:74px;bottom:auto;left:auto;right:8px;max-width:230px;padding:8px 10px 8px 8px;gap:8px;border-radius:12px;transform:translateY(-180%)}
+ .sp .av{width:30px;height:30px;font-size:13px}
+ .sp .tx{font-size:11px;line-height:1.35}
+ .sp .t{font-size:9.5px;margin-top:2px}
+ .sp.show{transform:none}
+}
 </style>
 </head>
 <body>
