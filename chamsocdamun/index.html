@@ -450,12 +450,13 @@ document.documentElement.classList.add('js');
 // Đồng hồ đếm ngược evergreen 24h (mỗi khách 1 mốc riêng, hết giờ tự làm mới)
 (function(){
   const boxes=[...document.querySelectorAll('[data-countdown]')]; if(!boxes.length) return;
-  const KEY='tehira_cd_end', DUR=24*3600*1000; let end=+localStorage.getItem(KEY)||0;
-  if(!end||end<Date.now()){end=Date.now()+DUR;try{localStorage.setItem(KEY,end)}catch(e){}}
+  const KEY='tehira_cd_2h', DUR=2*3600*1000, FLOOR=105*60*1000; /* 2h; reset khi con 1h45m */
+  let end=+localStorage.getItem(KEY)||0; const now0=Date.now();
+  if(!end||end-now0<=FLOOR||end-now0>DUR){end=now0+DUR;try{localStorage.setItem(KEY,end)}catch(e){}}
   const p=n=>String(n).padStart(2,'0');
   function tick(){
     let d=end-Date.now();
-    if(d<=0){end=Date.now()+DUR;try{localStorage.setItem(KEY,end)}catch(e){}d=DUR;}
+    if(d<=FLOOR){end=Date.now()+DUR;try{localStorage.setItem(KEY,end)}catch(e){}d=DUR;}
     const h=Math.floor(d/3600000),m=Math.floor(d%3600000/60000),s=Math.floor(d%60000/1000);
     boxes.forEach(b=>{const H=b.querySelector('[data-h]'),M=b.querySelector('[data-m]'),S=b.querySelector('[data-s]');if(H)H.textContent=p(h);if(M)M.textContent=p(m);if(S)S.textContent=p(s);});
   }
