@@ -201,6 +201,10 @@ footer a,footer p{overflow-wrap:anywhere;word-break:break-word}
 /* Social proof toast + so suat con lai */
 .slots{color:#e11d0f;font-weight:800;white-space:nowrap}
 .offer .slots{color:#ff6a52}
+@keyframes freefx{0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+.freefx{display:inline-block;color:#e11d0f;font-weight:800;white-space:nowrap;transform-origin:center;animation:freefx 1.05s ease-in-out infinite}
+.offer .freefx{color:#ff5238}
+@media(prefers-reduced-motion:reduce){.freefx{animation:none}}
 .sp{position:fixed;left:16px;bottom:16px;z-index:80;max-width:300px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 40px rgba(120,68,38,.22);padding:11px 14px 11px 11px;display:flex;gap:10px;align-items:center;transform:translateY(170%);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s;pointer-events:none}
 .sp.show{transform:none;opacity:1}
 .sp .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#e0a35f,#bc713b);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;flex:0 0 auto}
@@ -249,8 +253,8 @@ footer a,footer p{overflow-wrap:anywhere;word-break:break-word}
 
     <!-- FORM (khối chuyển đổi chính) -->
     <div class="form-card" id="dangky" data-rev>
-      <h3>Đăng ký <span style="color:var(--gold2)">Soi Da + Tư Vấn 1:1</span> MIỄN PHÍ</h3>
-      <p class="cap">Để lại thông tin — chuyên viên TEHIRA sẽ gọi tư vấn &amp; đặt lịch cho bạn trong 24h.</p><div class="cd" data-countdown><div class="cd-label">⏰ ƯU ĐÃI KẾT THÚC SAU</div><div class="cd-time"><div class="cd-box"><b data-h>00</b><span>GIỜ</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-m>00</b><span>PHÚT</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-s>00</b><span>GIÂY</span></div></div></div><div class="hot">🔥 Chỉ <b>100 khách nhanh nhất</b> — CÒN LẠI <b class="slots"><span data-slots>20</span> SUẤT MIỄN PHÍ</b></div>
+      <h3 style="text-align:center">Đăng ký <span style="color:var(--gold2)">Soi Da + Tư Vấn 1:1</span><br><span class="freefx">MIỄN PHÍ</span></h3>
+      <p class="cap">Để lại thông tin — chuyên viên TEHIRA sẽ gọi tư vấn &amp; đặt lịch cho bạn trong 24h.</p><div class="cd" data-countdown><div class="cd-label">⏰ ƯU ĐÃI KẾT THÚC SAU</div><div class="cd-time"><div class="cd-box"><b data-h>00</b><span>GIỜ</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-m>00</b><span>PHÚT</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-s>00</b><span>GIÂY</span></div></div></div><div class="hot">🔥 Chỉ <b>100 khách nhanh nhất</b> — CÒN LẠI <b class="slots"><span data-slots>20</span> SUẤT</b> <span class="freefx">MIỄN PHÍ</span></div>
       <form id="leadForm" novalidate>
         <div class="field">
           <label>Họ và tên *</label>
@@ -391,10 +395,10 @@ footer a,footer p{overflow-wrap:anywhere;word-break:break-word}
   <div class="wrap">
     <div class="offer" data-rev>
       <span class="tag">ƯU ĐÃI ĐĂNG KÝ HÔM NAY</span>
-      <h3>Soi da chuyên sâu + Tư vấn phác đồ 1:1<br><span class="free">MIỄN PHÍ 100%</span></h3>
+      <h3>Soi da chuyên sâu + Tư vấn phác đồ 1:1<br><span class="free freefx">MIỄN PHÍ 100%</span></h3>
       <p>Hiểu đúng làn da &amp; nhận lộ trình trị mụn phù hợp trước khi quyết định — hoàn toàn miễn phí, không ép mua liệu trình.</p>
       <div style="max-width:360px;margin:0 auto 18px"><div class="cd" data-countdown><div class="cd-label">⏰ ƯU ĐÃI KẾT THÚC SAU</div><div class="cd-time"><div class="cd-box"><b data-h>00</b><span>GIỜ</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-m>00</b><span>PHÚT</span></div><div class="cd-sep">:</div><div class="cd-box"><b data-s>00</b><span>GIÂY</span></div></div></div></div><a class="btn big" href="#dangky">ĐĂNG KÝ NHẬN SUẤT SOI DA MIỄN PHÍ</a>
-      <div class="scar">⏳ Chỉ <b>100 khách hàng nhanh nhất</b> — <b>CÒN LẠI <span class="slots"><span data-slots>20</span> SUẤT MIỄN PHÍ</span></b></div>
+      <div class="scar">⏳ Chỉ <b>100 khách hàng nhanh nhất</b> — <b>CÒN LẠI <span class="slots"><span data-slots>20</span> SUẤT</span></b> <span class="freefx">MIỄN PHÍ</span></div>
     </div>
   </div>
 </section>
