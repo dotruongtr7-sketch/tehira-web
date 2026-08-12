@@ -554,7 +554,7 @@ document.querySelectorAll('#leadForm,.leadForm').forEach(f=>f.addEventListener('
   let n=0;
   (function loop(){
     const soon=n<6; n++;
-    setTimeout(()=>{show();loop();}, soon?(12000+Math.random()*7000):(22000+Math.random()*18000));
+    setTimeout(()=>{show();loop();}, soon?(6000+Math.random()*4000):(14000+Math.random()*10000));
   })();
 })();
 </script>
