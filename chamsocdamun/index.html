@@ -71,6 +71,12 @@ section{padding:60px 0}
 .card h4{font-size:17px;font-weight:700;margin-bottom:6px}
 .card p{font-size:14px;color:var(--muted)}
 
+/* Benefits: icon + tieu de cung hang, mo ta canh giua */
+.ben-grid .card{display:flex;flex-wrap:wrap;align-items:center;text-align:left}
+.ben-grid .card .ic{margin-bottom:0}
+.ben-grid .card h4{flex:1;min-width:0;margin:0 0 0 13px}
+.ben-grid .card p{flex-basis:100%;text-align:center;margin-top:13px}
+
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;counter-reset:s}
 .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 20px 22px;box-shadow:0 12px 30px rgba(105,60,34,.06)}
